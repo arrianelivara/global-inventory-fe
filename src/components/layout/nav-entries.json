@@ -1,0 +1,122 @@
+{
+    "main_menus": [ 
+        {
+            "name": "Menu",
+            "key": "menu",
+            "defaultActive": true,
+            "isActive": true,
+            "description": "Main Menu",
+            "children": [],
+            "path": "",
+            "exact": true
+        },
+        {
+            "name": "Master Data",
+            "isActive": false,
+            "key": "master_data",
+            "description": "Master Data",
+            "path": "employees",
+            "exact": false,
+            "children": [
+                {
+                    "name": "Employees",
+                    "key": "employees",
+                    "isActive": false,
+                    "description": "Employees",
+                    "path": "employees",
+                    "exact": true
+                },
+                {
+                    "name": "Job Roles",
+                    "key": "job_roles",
+                    "isActive": false,
+                    "description": "Job Roles",
+                    "path": "job-roles",
+                    "exact": true
+                },
+                {
+                    "name": "Parts",
+                    "key": "parts",
+                    "isActive": false,
+                    "description": "Parts",
+                    "path": "parts",
+                    "exact": true
+                },
+                {
+                    "name": "Brands",
+                    "key": "brands",
+                    "isActive": false,
+                    "description": "Brands",
+                    "path": "brands",
+                    "exact": true
+                },
+                {
+                    "name": "Units",
+                    "key": "units",
+                    "isActive": false,
+                    "description": "Units",
+                    "path": "units",
+                    "exact": true
+                },
+                {
+                    "name": "Supplier",
+                    "key": "supplier",
+                    "isActive": false,
+                    "description": "Supplier",
+                    "path": "supplier",
+                    "exact": true
+                },
+                {
+                    "name": "Warehouse",
+                    "key": "warehouse",
+                    "isActive": false,
+                    "description": "Warehouse",
+                    "path": "warehouse",
+                    "exact": true
+                }
+            ]
+        },
+        {
+            "name": "Inventory",
+            "key": "inventory",
+            "isActive": false,
+            "description": "Inventory",
+            "path": "inbound",
+            "exact": true,
+            "children": [
+                {
+                    "name": "Inbound",
+                    "key": "inbound",
+                    "isActive": false,
+                    "description": "Inbound",
+                    "path": "inbound",
+                    "exact": true
+                },
+                {
+                    "name": "Outbound",
+                    "key": "outbound",
+                    "isActive": false,
+                    "description": "Outbound",
+                    "path": "outbound",
+                    "exact": true
+                }
+            ]
+        },
+        {
+            "name": "Administration",
+            "isActive": false,
+            "key": "administration",
+            "description": "Administration",
+            "path": "administration",
+            "exact": true
+        },
+        {
+            "name": "Reports",
+            "key": "reports",
+            "isActive": false,
+            "description": "Reports",
+            "path": "reports",
+            "exact": true
+        }
+    ]
+}
