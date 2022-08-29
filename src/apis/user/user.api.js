@@ -8,8 +8,8 @@ export const getUsers = async () => {
 
 export const getToken = async () => {
   const body = {
-    username: "suriagadiego", 
-    password: "DYsuriaga2527"
+    username: "", 
+    password: ""
   }
   const res = await Post("token/", body);
   return res.data;
