@@ -1,30 +1,30 @@
 import { useMemo, useState, useCallback } from "react";
 
 const useModal = (onClose) => {
-  const [active, setActive] = useState(false);
+  const [visible, setVisible] = useState(false);
   const [state, setState] = useState(null);
 
   const show = useCallback(
     (s = null) => {
-      setActive(true);
+      setVisible(true);
       setState(s);
     },
-    [setActive, setState]
+    [setVisible, setState]
   );
 
   const close = useCallback(() => {
     if (onClose) {
       onClose(() => {
-        setActive(false);
+        setVisible(false);
       });
     }
-    setActive(false);
+    setVisible(false);
     setState(null);
   }, [setState, onClose]);
 
   return useMemo(() => {
-    return { show: (s) => show(s), onClose: () => close(), close: () => close(), active, ...state };
-  }, [state, active, close, show]);
+    return { show: (s) => show(s), onClose: () => close(), close: () => close(), visible, ...state };
+  }, [state, visible, close, show]);
 };
 
 export default useModal;

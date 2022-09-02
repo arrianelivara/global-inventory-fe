@@ -231,7 +231,7 @@ const Table = ({
                       }}
                     />
                   ) : (
-                    <span className="text-thead text-washed-dark font-semibold">{column.text}</span>
+                    <span className="text-thead text-blue font-semibold">{column.text}</span>
                   )}
                 </h4>
               </th>

@@ -38,7 +38,7 @@ const Text = ({
     className
   );
   if (description) {
-    return <p className={classnames("text-xs text-gray-light", classStyle)}>{children}</p>;
+    return <p className={classnames("text-sm text-blue-light", classStyle)}>{children}</p>;
   }
 
   if (label) {

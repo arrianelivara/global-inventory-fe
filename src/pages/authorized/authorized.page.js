@@ -1,9 +1,8 @@
 import React, { useMemo} from "react";
 import { Routes, Route } from "react-router-dom";
-import Menu from "../../modules/menu/menu";
+import Menu from "../../modules/menu/menu.module";
 import { Path } from "paths";
-import Inbound from "../../modules/inventory/inbound";
-import Outbound from "../../modules/inventory/outbound";
+import { EmployeeList, JobRoles, Parts, Brands, Units, Supplier, Warehouse, Inbound, Outbound, Administration, Reports } from "modules";
 
 const AuthorizedPage = () => {
   
@@ -13,6 +12,34 @@ const AuthorizedPage = () => {
         exact: true,
         element: <Menu />,
       },
+      [Path.EMPLOYEES]: {
+        exact: true,
+        element: <EmployeeList />,
+      },
+      [Path.JOB_ROLES]: {
+        exact: true,
+        element: <JobRoles />,
+      },
+      [Path.PARTS]: {
+        exact: true,
+        element: <Parts />,
+      },
+      [Path.BRANDS]: {
+        exact: true,
+        element: <Brands />,
+      },
+      [Path.UNITS]: {
+        exact: true,
+        element: <Units />,
+      },
+      [Path.SUPPLIER]: {
+        exact: true,
+        element: <Supplier />,
+      },
+      [Path.WAREHOUSE]: {
+        exact: true,
+        element: <Warehouse />,
+      },
       [Path.INBOUND]: {
         exact: true,
         element: <Inbound />,
@@ -20,6 +47,14 @@ const AuthorizedPage = () => {
       [Path.OUTBOUND]: {
         exact: true,
         element: <Outbound />,
+      },
+      [Path.ADMINISTRATION]: {
+        exact: true,
+        element: <Administration />,
+      },
+      [Path.REPORT]: {
+        exact: true,
+        element: <Reports />,
       },
     };
   }, []);

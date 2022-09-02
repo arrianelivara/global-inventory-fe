@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import './App.css';
 import { Navigation } from "./components";
 import LayoutA from "./components/layout/layout-a";
 import { SignIn } from "./modules";

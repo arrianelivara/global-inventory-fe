@@ -1,5 +1,8 @@
+import { administrationPaths } from "./administration.path";
 import { authPaths } from "./auth.path";
 import { inventoryPaths } from "./inventory.path";
+import { masterDataPaths } from "./master-data.path";
+import { reportPaths } from "./report";
 
 const preparePaths = ({ prefix, paths = {} }) => {
   let newPaths = {};
@@ -15,12 +18,16 @@ const preparePaths = ({ prefix, paths = {} }) => {
   }
 
   newPaths[prefix.toString().toUpperCase()] = `/${prefix}`;
+  console.log(newPaths)
   return newPaths;
 };
 
 const Path = {
   ...preparePaths({ prefix: "auth", paths: authPaths }),
   ...preparePaths({ prefix: "inventory", paths: inventoryPaths }),
+  ...preparePaths({ prefix: "data", paths: masterDataPaths }),
+  ...preparePaths({ prefix: "administration", paths: administrationPaths }),
+  ...preparePaths({ prefix: "report", paths: reportPaths }),
   SLASH: "/",
 };
 

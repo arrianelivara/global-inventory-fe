@@ -1,6 +1,6 @@
 .primary {
-  background-color: #2669B9;
-  border: 1px solid #2669B9;
+  background-color: #161F4A;
+  border: 1px solid #161F4A;
   color: #ffffff;
   box-shadow: none;
   -webkit-transition: background-color 0.2s ease-in-out;
@@ -15,36 +15,36 @@
 }
 
 .primary:hover {
-  background-color: #1864c1;
+  background-color: #505777;
   color: #ffffff;
-  border: 1px solid #2669B9;
+  border: 1px solid #505777;
 }
 
-.primary:active,
 .primary:focus {
-  background-color: #1864c1;
+  background-color: #161F4A;
   color: #ffffff;
-  border: 1px solid #2669B9;
+  border: 1px solid #161F4A;
 }
 
 .secondary {
   font-weight: bold;
-  color: #46b0c6;
+  color: #1f2652;
+  border: 1px solid #1f2652;
 }
 
-.secondary:hover,
-.secondary:active {
-  color: #46b0c6;
-  border: 1px solid #46b0c6;
+.secondary:hover {
+  color: #505777;
+  border: 1px solid #505777;
   box-shadow: none;
 }
 
 .secondary:focus {
-  color: #46b0c6;
+  color: #505777;
   outline: none;
   --tw-border-opacity: 1;
   border: 1px solid rgba(229, 231, 235, var(--tw-border-opacity));
   box-shadow: none;
+  border: 1px solid #505777;
 }
 
 .danger {

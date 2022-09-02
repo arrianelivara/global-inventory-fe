@@ -1,1 +1,12 @@
-export { default as SignIn } from "./auth/sign-in.module"
+export { default as SignIn } from "./auth/sign-in.module";
+export { default as Administration } from "./administration/administration.module";
+export { default as Inbound } from "./inventory/inbound.module";
+export { default as Outbound } from "./inventory/outbound.module";
+export { default as EmployeeList } from "./master-data/employee/employee-list.module";
+export { default as JobRoles } from "./master-data/job-roles/job-role.module";
+export { default as Parts } from "./master-data/parts/parts.module";
+export { default as Supplier } from "./master-data/supplier/supplier.module";
+export { default as Units } from "./master-data/units/units.module";
+export { default as Warehouse } from "./master-data/warehouse/warehouse.module";
+export { default as Brands } from "./master-data/brands/brands.module";
+export { default as Reports } from "./reports/reports.module";
