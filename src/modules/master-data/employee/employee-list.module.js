@@ -1,13 +1,16 @@
-import { Button, DataTable, Field, Input, Text } from 'components';
+import { Button, DataTable, WrapperA } from 'components';
 import { StyleType } from 'enums';
 import React from 'react'
 import { columns } from './columns';
 import { PlusOutlined, EditOutlined } from "@ant-design/icons";
 import { useModal } from "hooks";
-import { Modal } from "antd"
+import lang from "translations";
+import AddEmployeeModal from './add-employee/add-employee-modal.module';
+import EditEmployeeModal from './edit-employee/edit-employee-modal.module';
 
 const EmployeeList = () => {
     const addEmployeeModal = useModal();
+    const editEmployeeModal = useModal();
 
     const sampleData = [
         {
@@ -31,56 +34,36 @@ const EmployeeList = () => {
     ]
 
     return (
-        <React.Fragment>
-            <Text title size='text-lg'>Employees</Text>
-            <Text description>List of Employees</Text>
-            <div className="mt-md">
-                <Button iconPrefix={<PlusOutlined className="mr-sm" />} className="mr-sm"
-                    onClick={() => {
-                        addEmployeeModal.show({
-                            title: "Register Employee",
-                            okText: "Submit",
-                            width: "60%"
-                        })
-                    }}>
-                    Add
-                </Button>
-                <Button iconPrefix={<EditOutlined className="mr-sm"/>} type={StyleType.Secondary}>Update</Button>
-            </div>
+        <WrapperA
+            title={lang.employees}
+            description={lang.listOfEmployees}
+            actionButtons={
+                <div className="mt-md">
+                    <Button iconPrefix={<PlusOutlined className="mr-sm" />} className="mr-sm"
+                        onClick={() => {
+                            addEmployeeModal.show({
+                                title: "Register New Employee",
+                                okText: "Add",
+                                width: "50%"
+                            })
+                        }}>
+                        {lang.add}
+                    </Button>
+                    <Button iconPrefix={<EditOutlined className="mr-sm"/>} 
+                            type={StyleType.Secondary}
+                            onClick={() => {
+                                editEmployeeModal.show({
+                                    title: "Update Employee Information",
+                                    okText: "Save",
+                                    width: "50%"
+                                })}}
+                        >{lang.update}</Button>
+                </div>
+            }>
             <DataTable className="mt-md" columns={columns} data={sampleData} pageSize={10} total={sampleData.length}/>
-            <Modal {...addEmployeeModal} onCancel={() => addEmployeeModal.close()}>
-                <div className='grid grid-cols-4 gap-2'>
-                    <Field label="Employee Number">
-                        <Input />
-                    </Field>
-                    <Field label="First Name">
-                        <Input />
-                    </Field>
-                    <Field label="Middle Name">
-                        <Input />
-                    </Field>
-                    <Field label="Last Name">
-                        <Input />
-                    </Field>
-                </div>
-                <div className='grid grid-cols-4 gap-2'>
-                    <Field label="Job Role" className="col-span-2">
-                        <Input />
-                    </Field>
-                    <Field label="Start Date">
-                        <Input />
-                    </Field>
-                    <Field label="End Date">
-                        <Input />
-                    </Field>
-                </div>
-                <div>
-                    <Field label="Remarks">
-                        <Input />
-                    </Field>
-                </div>
-            </Modal>
-        </React.Fragment>
+            <AddEmployeeModal addEmployeeModal={addEmployeeModal}/>
+            <EditEmployeeModal editEmployeeModal={editEmployeeModal} />
+        </WrapperA>
     );
 }
  

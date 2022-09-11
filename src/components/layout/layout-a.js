@@ -1,10 +1,12 @@
 import React from 'react'
 import {main_menus} from "./nav-entries.js";
 import { NavLink } from 'react-router-dom';
+import { Navigation } from 'components';
 
 const LayoutA = ({ component }) => {
     const menuList = main_menus;
     return (<React.Fragment>
+        <Navigation isLoggedIn={true} />
         <div className="flex h-full">
             <div className="h-full w-64 bg-white drop-shadow-sm">
                 {menuList.map((menu) => {
@@ -30,8 +32,11 @@ const LayoutA = ({ component }) => {
                             </div>
                 })}
             </div>
-            <div className="w-full p-xl">
-                {component}
+            <div className="w-full pb-24 px-xl pt-xl flex flex-col overflow-auto">
+                <div className="mb-md">{component}</div>
+                <div className="text-center mt-auto text-xs text-gray">
+                    Copyright © 2022 Global Equipment Material Handlers Inc. All rights reserved.
+                </div>
             </div>
         </div>
     </React.Fragment>);

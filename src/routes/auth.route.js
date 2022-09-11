@@ -1,18 +1,9 @@
 import React from "react";
-import { Route, Navigate } from "react-router-dom";
-import { Path } from "../paths";
+import { Navigate } from "react-router-dom";
 
-const AuthRoute = ({ element: Component, ...props }) => {
+const AuthRoute = () => {
   return (
-    <Route
-      {...props}
-      element={localStorage.getItem("accessToken") ? (
-        <Navigate to={`${Path.SLASH}`} />
-      ) : (
-        <Component />
-      )
-    }
-    />
+    <Navigate to={{ pathname: "/auth" }} />
   );
 };
 

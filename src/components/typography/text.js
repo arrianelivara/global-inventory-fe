@@ -43,7 +43,7 @@ const Text = ({
 
   if (label) {
     return (
-      <div className={classnames("text-xs font-small text-black-200 font-semibold", classStyle)}>
+      <div className={classnames("text-xs text-gray-500 font-semibold", classStyle)}>
         {children}
       </div>
     );

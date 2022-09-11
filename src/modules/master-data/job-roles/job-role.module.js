@@ -1,6 +1,11 @@
-import React from 'react'
+import { WrapperA } from 'components';
+import React from 'react';
+import lang from "translations";
+
 const JobRoles = () => {
-    return (<div>Job Roles</div>  );
+    return (<WrapperA title={lang.jobRoles}>
+
+    </WrapperA>);
 }
  
 export default JobRoles;

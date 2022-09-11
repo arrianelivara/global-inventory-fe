@@ -17,3 +17,6 @@ export { default as Container } from "./container/container";
 export { default as Pagination } from "./pagination/pagination";
 export { default as Select } from "./select/select";
 export { default as Modal } from "./modal/modal";
+export { default as WrapperA } from "./wrapper/wrapper-a";
+export { default as DatePicker } from "./date-picker/date-picker";
+export { default as TextArea } from "./text-area/text-area";

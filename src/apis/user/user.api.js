@@ -6,11 +6,7 @@ export const getUsers = async () => {
   return res.data;
 };
 
-export const getToken = async () => {
-  const body = {
-    username: "suriagadiego", 
-    password: "DYsuriaga2527"
-  }
-  const res = await Post("token/", body);
-  return res.data;
+export const signIn = async ({ username, password }) => {
+  const res = await Post("token/", { username, password });
+  return res;
 };

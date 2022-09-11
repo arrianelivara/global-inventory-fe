@@ -18,7 +18,6 @@ const preparePaths = ({ prefix, paths = {} }) => {
   }
 
   newPaths[prefix.toString().toUpperCase()] = `/${prefix}`;
-  console.log(newPaths)
   return newPaths;
 };
 

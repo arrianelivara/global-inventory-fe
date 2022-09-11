@@ -1,20 +1,21 @@
 .container {
   color: #0a3637;
-  width: 6.25rem;
-  height: 2rem;
+  height: 2.6rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: white;
   border-radius: 0.25rem;
-  display: flex;
   padding: 12px;
   cursor: pointer;
-  border: 1px solid #9b9ca5;
+  border: 1px solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(226 228 228 / var(--tw-border-opacity));
 }
 
 .text {
   font-size: 13px;
+  color: gray;
 }
 
 .icon > svg {

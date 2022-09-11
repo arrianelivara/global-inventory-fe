@@ -1,12 +1,27 @@
-import React from 'react';
-import { Logo } from "images";
-import { Text } from "components";
-const Navigation = () => {
+import React from 'react'
+import { Logo } from 'images';
+import { Text, Button } from "components"
+import { formatDate, redirectTo } from "services";
+import lang from 'translations';
+import { Path } from 'paths';
+
+const Navigation = ({ isLoggedIn }) => {
+
+    const logoutCallback = () => {
+      localStorage.clear();
+      redirectTo(Path.AUTH);
+    }
     return <React.Fragment>
       <div className="w-full py-2 border-b bg-white px-5">
         <div className="flex justify-between items-center">
           <img src={Logo} alt="logo" style={{ height: '60px' }}/>
-          <Text>{new Date().toString()}</Text>
+          <div className="flex justify-between items-center gap-3">
+            <Text>{formatDate(new Date())}</Text>
+            {isLoggedIn && 
+              <div>
+                <Button onClick={logoutCallback}>{lang.logout}</Button>
+              </div>}
+          </div>
         </div>
       </div>
     </React.Fragment>

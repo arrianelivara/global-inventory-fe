@@ -1,8 +1,10 @@
 import { Path } from "paths";
-console.log(Path.EMPLOYEES)
+import { capitalize } from "services";
+import lang from "translations";
+
 export const main_menus = [
       {
-        name: "MENU",
+        name: capitalize(lang.menu),
         key: "menu",
         description: "Main Menu",
         children: [],

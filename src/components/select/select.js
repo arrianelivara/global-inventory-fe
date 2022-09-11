@@ -2,11 +2,9 @@ import React, { useState, useMemo } from "react";
 import styles from "./select.module.scss";
 import classnames from "classnames";
 import { Select as AntSelect } from "antd";
-import { Icon, Text } from "components";
+import { Icon } from "components";
 import { DownOutlined } from "@ant-design/icons";
 import { sortByKeyName } from "services";
-
-// import { v4 as uuidv4 } from "uuid";
 
 const { Option, OptGroup } = AntSelect;
 
@@ -63,13 +61,10 @@ const Select = ({
         bordered={false}
         className={classnames(styles.container, "text-sm w-full h-full", {
           "text-gray-500": pagination || disabled,
-          // [`${styles.placeholderBlack}`]: searchable && value,
         })}
         showSearch={searchable}
         dropdownRender={!customRenderContent ? null : customRenderContent}
         placeholder={loading ? "Loading..." : placeholder}
-        // placeholder={searchable && value ? value : loading ? "Loading..." : placeholder}
-        // value={!options.length ? null : value}
         value={isValueIncludedInOption ? value : dynamicOptions ? value : null}
         onChange={(v, option) => {
           onChange(name, {
@@ -77,7 +72,6 @@ const Select = ({
             option,
           });
         }}
-        // searchValue={searchValue ||   null}
         onSearch={onSearch}
         onPopupScroll={onScroll}
         filterOption={(input, option) => {
@@ -87,7 +81,6 @@ const Select = ({
         onClick={() => {
           setOpen(!open);
         }}
-        // open={open}
         suffixIcon={
           fetchingOptions ? null : (
             <div

@@ -12,8 +12,6 @@ const Field = {
   LABEL: "Label",
   DATE_RANGE: "Date Range",
   NUMBER: "Number",
-  COUNTRY: "COUNTRY",
-  NATIONALITY: "NATIONALITY",
 };
 
 export default enumeration(Field);

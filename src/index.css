@@ -3,11 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 @import "./components/icon/icon-font/style.css";
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 * {
   margin: 0;
-  font-family: 'Rubik', 'Roboto', 'Oxygen',
+  font-family: 'Inter','Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,7 +29,7 @@
 }
 
 .ant-modal-content {
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .ant-card-body {
@@ -38,8 +38,8 @@
 
 .ant-modal-header {
   border-bottom: none;
-  padding: 1rem;
-  border-radius: 10px 10px 0 0;
+  padding: 2rem 2rem 0;
+  border-radius: 5px 5px 0 0;
 }
 
 .ant-modal-close:focus {
@@ -265,7 +265,7 @@
 .ant-modal-footer .ant-btn.ant-btn-primary {
   background-color: #161F4A;
   border-color: #161F4A;
-  border-radius: 0.5rem;
+  border-radius: 5px;
   padding: 5px 20px;
   height: 40px;
 }
@@ -280,6 +280,7 @@
 
 .ant-modal-footer {
   padding: 20px;
+  border-radius: 0 0 5px 5px;
 }
 
 .ant-modal-header .ant-modal-title {

@@ -1,17 +1,18 @@
 import React from "react";
 import classnames from "classnames";
-import { LoadingOutlined } from "@ant-design/icons";
+import { Spin } from 'antd';
 
-const Icon = ({ loading, name, className, onClick, fontSize, paddingless = false, color }) => {
+const Icon = ({ loading, name, className, onClick, fontSize, paddingless = false, color, size = 'small' }) => {
   if (loading) {
     return (
-      <LoadingOutlined
+      <Spin
         className={classnames(className, {
           "px-xs py-xs": !paddingless,
         })}
         style={{
           fontSize,
         }}
+        size={size}
       />
     );
   }

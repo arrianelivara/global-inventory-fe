@@ -19,7 +19,9 @@ const SimpleDropdown = ({
     <Dropdown trigger={trigger} {...dropdownProps}>
       <div className={classname ? classname : classnames(container)}>
         <div className={classnames(styles.text)}>{text}</div>
-        <Icon name={iconName} className={iconStyle} color={color} />
+        <div>
+          <Icon name={iconName} className={iconStyle} color={color} />
+        </div>
       </div>
     </Dropdown>
   );

@@ -8,7 +8,7 @@ const AuthorizedRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       element={localStorage.getItem("accessToken") ? (
-          <Component {...props} />
+          <Component {...rest} />
         ) : (
           <Navigate
             to={{

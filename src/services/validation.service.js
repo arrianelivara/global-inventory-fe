@@ -1,7 +1,5 @@
-import { isEmailValid } from "services";
 import { formatNumberToMoney, parseMoneyToNumber } from "./money.service";
 import { capitalize } from "./text.service";
-import lang from "translations";
 
 const Validation = {
   required: (custom = {}) => {
@@ -10,7 +8,7 @@ const Validation = {
       const value = field?.value?.toString().trim();
       if (!value && !field.disabled) {
         if (noMessage) return { error: true };
-        return { error: true, message: customMessage ? customMessage : lang.thisFieldIsRequired };
+        return { error: true, message: customMessage ? customMessage : "This field is required" };
       }
       return { error: false, message: null };
     };
@@ -21,7 +19,7 @@ const Validation = {
       const value = field?.value?.toString().trim();
       if (!value && expression) {
         if (noMessage) return { error: true };
-        return { error: true, message: customMessage ? customMessage : lang.thisFieldIsRequired };
+        return { error: true, message: customMessage ? customMessage : "This field is required" };
       }
       return { error: false, message: null };
     };
@@ -31,7 +29,7 @@ const Validation = {
       const value = field?.value;
       if (!value || !value.length) {
         if (noMessage) return { error: true };
-        return { error: true, message: customMessage ? customMessage : lang.thisFieldIsRequired };
+        return { error: true, message: customMessage ? customMessage : "This field is required" };
       }
       return { error: false, message: null };
     };
@@ -41,7 +39,7 @@ const Validation = {
       const value = field?.value;
       if (!value) {
         if (noMessage) return { error: true };
-        return { error: true, message: customMessage ? customMessage : lang.thisFieldIsRequired };
+        return { error: true, message: customMessage ? customMessage : "This field is required" };
       }
       return { error: false, message: null };
     };
@@ -53,7 +51,7 @@ const Validation = {
           error: true,
           message: customMessage
             ? customMessage
-            : lang.populate(lang.maximumLengthCharacters, [`${length}`]),
+            : "Maximum characters of " + length,
         };
       }
       return { error: false, message: null };
@@ -64,7 +62,7 @@ const Validation = {
       if (field.value && field.value.trim().length < length) {
         const message = customMessage
           ? customMessage
-          : lang.populate(lang.minimumCharactersAllowed, [`${length}`]);
+          : "Minimum length of " + length;
         return {
           error: true,
           message: showMessage ? message : "",
@@ -73,27 +71,13 @@ const Validation = {
       return { error: false, message: null };
     };
   },
-  emailAddress: (o) => {
-    const { noMessage = false } = o || {};
-    return (field) => {
-      const { value: fieldValue } = field;
-      if (fieldValue && !isEmailValid(fieldValue)) {
-        if (noMessage) return { error: true };
-        return {
-          error: true,
-          message: lang.thisEmailIsInvalid,
-        };
-      }
-      return { error: false, message: "" };
-    };
-  },
   rangeValue: (min = 0, max = 1, customMessage = null) => {
     return (field) => {
       let cleanValue = `${field.value}`.replace(/,/g, "");
       if (parseFloat(cleanValue) < min || parseFloat(cleanValue) > max) {
         return {
           error: true,
-          message: customMessage ? customMessage : lang.valueBetween`${min}-${max}`,
+          message: customMessage ? customMessage : `Value must be between ${min}-${max} only`,
         };
       }
       return { error: false, message: null };
@@ -110,7 +94,7 @@ const Validation = {
           error: true,
           message: customMessage
             ? customMessage
-            : `${lang.maximumValueIs} ${amount ? formatNumberToMoney(max) : max}`,
+            : `Maximum value is ${amount ? formatNumberToMoney(max) : max}`,
         };
       }
       return { error: false, message: null };
@@ -127,7 +111,7 @@ const Validation = {
           error: true,
           message: customMessage
             ? customMessage
-            : `${lang.minimumValueIs} ${amount ? formatNumberToMoney(min) : min}`,
+            : `Minimum value is ${amount ? formatNumberToMoney(min) : min}`,
         };
       }
       return { error: false, message: null };
@@ -154,7 +138,7 @@ const Validation = {
       if (isNaN(cleanValue)) {
         return {
           error: true,
-          message: customMessage ? customMessage : lang.shouldBeANumber,
+          message: customMessage ? customMessage : "Input must be a number",
         };
       }
       return { error: false, message: null };
@@ -167,7 +151,7 @@ const Validation = {
           error: true,
           message: customMessage
             ? customMessage
-            : `${capitalize(field.value)} ${lang.isAreserveWord}`,
+            : `${capitalize(field.value)} is a reserved word`,
         };
       }
       return { error: false, message: null };
@@ -178,7 +162,7 @@ const Validation = {
       if (field.value.length < min) {
         return {
           error: true,
-          message: customMessage ? customMessage : `${lang.minimum} ${min} ${lang.values}`,
+          message: customMessage ? customMessage : `Minimum ${min} values`,
         };
       }
       return { error: false, message: null };

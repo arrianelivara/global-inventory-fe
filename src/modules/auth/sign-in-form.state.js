@@ -1,25 +1,26 @@
 import { Field } from "enums";
 import Validation from "services/validation.service";
 
-
-export const initialState = {
+export const initialFormState = {
   email: {
     name: "email",
     placeholder: "Enter email address",
-    value: "",
+    value: null,
     type: Field.INPUT,
-    validations: [
-      Validation.required({ noMessage: true }),
-      Validation.emailAddress({ noMessage: true }),
-    ],
     maxLength: 75,
   },
   password: {
     name: "password",
     placeholder: "Password",
-    value: "",
+    value: null,
     type: Field.INPUT,
     validations: [Validation.required({})],
     maxLength: 75,
+    inputType: "password"
+  },
+  rememberMe: {
+    name: "rememberMe",
+    value: null,
+    type: Field.CHECKBOX,
   },
 };

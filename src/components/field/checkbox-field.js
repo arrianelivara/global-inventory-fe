@@ -5,9 +5,9 @@ import styles from "./field.module.scss";
 
 const CheckboxField = ({ children, className, textSize = "text-sm", ...props }) => {
   return (
-    <div className={classnames("flex items-center", className, styles.fielde)}>
+    <div className={classnames("flex items-center", className, styles.field)}>
       <Checkbox {...props} />
-      <Text className="ml-sm" size={textSize}>
+      <Text className="ml-sm mt-xs" size={textSize}>
         {children}
       </Text>
     </div>

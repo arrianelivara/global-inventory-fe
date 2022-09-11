@@ -16,12 +16,13 @@ const Field = ({
   errorClassName,
   error,
   labelSuffix,
+  required
 }) => {
   const labelDisplay = useMemo(() => {
     if (label && !noLabel) {
       return (
         <Text label className="break-all">
-          {label}
+         {required && <span className='text-red'>* </span>} {label}
         </Text>
       );
     } else if (filterLabel) {
@@ -33,7 +34,7 @@ const Field = ({
     } else {
       return customLabel;
     }
-  }, [label, filterLabel, customLabel, noLabel]);
+  }, [label, filterLabel, customLabel, noLabel, required]);
 
   return (
     <div className={classnames(`${width ? `${width}` : `w-full`}`, className, styles.field)}>
