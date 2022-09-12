@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import classnames from "classnames";
-
+import styles from "./text-area.module.scss";
 const TextArea = ({ name, error, maxLength, value, placeholder, className, onChange }) => {
   const onChangeCb = useCallback(
     (e) => {
@@ -23,7 +23,8 @@ const TextArea = ({ name, error, maxLength, value, placeholder, className, onCha
           "border-white-darker": !error,
           "border-red text-red": error,
         },
-        className
+        className,
+        styles.container
       )}
     ></textarea>
   );

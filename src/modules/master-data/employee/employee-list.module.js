@@ -3,10 +3,13 @@ import { StyleType } from 'enums';
 import React from 'react'
 import { columns } from './columns';
 import { PlusOutlined, EditOutlined } from "@ant-design/icons";
-import { useModal } from "hooks";
+import { useForm, useModal } from "hooks";
 import lang from "translations";
 import AddEmployeeModal from './add-employee/add-employee-modal.module';
 import EditEmployeeModal from './edit-employee/edit-employee-modal.module';
+import WarehouseSelection from '../common/warehouse.module';
+import { useMemo } from 'react';
+import initialFormState from '../common/warehouse-state.module';
 
 const EmployeeList = () => {
     const addEmployeeModal = useModal();
@@ -33,6 +36,13 @@ const EmployeeList = () => {
         }
     ]
 
+
+    const formState = useMemo(() => {
+        return initialFormState();
+    }, []);
+
+    const { fields, modifyField } = useForm({ initialState: formState })
+
     return (
         <WrapperA
             title={lang.employees}
@@ -42,8 +52,8 @@ const EmployeeList = () => {
                     <Button iconPrefix={<PlusOutlined className="mr-sm" />} className="mr-sm"
                         onClick={() => {
                             addEmployeeModal.show({
-                                title: "Register New Employee",
-                                okText: "Add",
+                                title: lang.registerNewEmployee,
+                                okText: lang.add,
                                 width: "50%"
                             })
                         }}>
@@ -53,12 +63,15 @@ const EmployeeList = () => {
                             type={StyleType.Secondary}
                             onClick={() => {
                                 editEmployeeModal.show({
-                                    title: "Update Employee Information",
-                                    okText: "Save",
+                                    title: lang.updateEmployeeInfo,
+                                    okText: lang.save,
                                     width: "50%"
                                 })}}
                         >{lang.update}</Button>
                 </div>
+            }
+            filterButtons={
+                <WarehouseSelection field={fields.warehouse} modifyField={modifyField}/>
             }>
             <DataTable className="mt-md" columns={columns} data={sampleData} pageSize={10} total={sampleData.length}/>
             <AddEmployeeModal addEmployeeModal={addEmployeeModal}/>

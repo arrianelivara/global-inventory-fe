@@ -1,5 +1,5 @@
 import { Modal } from 'antd';
-import { DatePicker, Field, Input, SimpleDropdown, Text, TextArea } from 'components';
+import { DatePicker, Field, Input, Select, Text, TextArea } from 'components';
 import lang from "translations"
 import React from 'react'
 
@@ -26,7 +26,7 @@ const EmployeeModal = ({ employeeModal }) => {
                 </div>
                 <div className='mt-sm grid md:grid-cols-4 gap-3'>
                     <Field label="Job Role" className="col-span-2" required>
-                        <SimpleDropdown text={lang.selectJobRole}></SimpleDropdown>
+                        <Select text={lang.selectJobRole}></Select>
                     </Field>
                     <Field label="Start Date" required>
                         <DatePicker></DatePicker>

@@ -24,7 +24,7 @@ const Select = ({
   pagination,
   height = "h-field",
   customRenderContent,
-  optionClassName = "py-md",
+  optionClassName = "py-sm",
   fetchingOptions,
   footer,
   // searchValue,

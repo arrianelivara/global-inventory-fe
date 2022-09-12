@@ -50,5 +50,8 @@ export const locale = {
     forgotPassword: "Forgot Password?",
     loading: "Loading..",
     listOfEmployees: "List of Employees",
-    selectJobRole: "Select Job Role"
+    selectJobRole: "Select Job Role",
+    updateEmployeeInfo: "Update Employee Information",
+    filterByWarehouse: "Filter by warehouse..",
+    warehouseLabel: "Warehouse:"
 }; export default Object.freeze(locale);
