@@ -10,3 +10,4 @@ export { default as Units } from "./master-data/units/units.module";
 export { default as Warehouse } from "./master-data/warehouse/warehouse.module";
 export { default as Brands } from "./master-data/brands/brands.module";
 export { default as Reports } from "./reports/reports.module";
+export { default as Menu } from "./menu/menu.module";

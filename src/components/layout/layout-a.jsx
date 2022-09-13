@@ -1,5 +1,5 @@
 import React from 'react'
-import {main_menus} from "./nav-entries.js";
+import {main_menus} from "./nav-entries.jsx";
 import { NavLink } from 'react-router-dom';
 import { Navigation } from 'components';
 
