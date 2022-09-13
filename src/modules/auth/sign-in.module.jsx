@@ -45,7 +45,7 @@ const SignIn = () => {
     <React.Fragment>
       <Navigation />
       <div className="mt-xxl h-full">
-        <Card bordered={false} className="p-md bg-white w-1/4 m-auto rounded-md border-b-2 border-indigo-600">
+        <Card bordered={false} className="p-md bg-white m-auto rounded-md border-b-2 border-indigo-600 w-3/4 sm:w-1/2  xl:w-1/4">
           <Text title size="text-lg">{lang.signInToAccount}</Text>
           <div className="mt-xl">
             <Field label={lang.email} {...fields.email}>

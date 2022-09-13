@@ -1,5 +1,5 @@
 import React from 'react'
-import EmployeeModal from '../employee-modal.module';
+import EmployeeModal from '../modal-employee/employee-modal.module';
 
 const EditEmployeeModal = ({ editEmployeeModal }) => {
     return (

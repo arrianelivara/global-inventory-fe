@@ -1,6 +1,10 @@
-import React from 'react'
+import { WrapperA } from 'components';
+import React from 'react';
+import lang from "translations";
 const Supplier = () => {
-    return (<div>Supplier</div>  );
+    return (<WrapperA title={lang.supplier} description={lang.listOfSuppliers}>
+
+    </WrapperA>);
 }
  
 export default Supplier;

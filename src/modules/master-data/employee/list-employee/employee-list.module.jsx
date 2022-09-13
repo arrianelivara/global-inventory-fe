@@ -5,11 +5,11 @@ import { columns } from './columns';
 import { PlusOutlined, EditOutlined } from "@ant-design/icons";
 import { useForm, useModal } from "hooks";
 import lang from "translations";
-import AddEmployeeModal from './add-employee/add-employee-modal.module';
-import EditEmployeeModal from './edit-employee/edit-employee-modal.module';
-import WarehouseSelection from '../common/warehouse.module';
+import AddEmployeeModal from '../add-employee/add-employee-modal.module';
+import EditEmployeeModal from '../edit-employee/edit-employee-modal.module';
+import WarehouseSelection from '../../common/warehouse.module';
 import { useMemo } from 'react';
-import initialFormState from '../common/warehouse-state.module';
+import initialFormState from '../../common/warehouse-state.module';
 
 const EmployeeList = () => {
     const addEmployeeModal = useModal();
@@ -22,8 +22,8 @@ const EmployeeList = () => {
             middleName: 'Dy',
             firstName: 'Diego',
             jobRole: 'Manager',
-            startDate: 'Yesterday',
-            endDate: 'Tomorrow'
+            startDate: '06/07/22 11:00AM',
+            endDate: '06/07/22 11:00AM'
         },
         {
             employeeNo: '1234',
@@ -31,11 +31,10 @@ const EmployeeList = () => {
             middleName: 'Elaurza',
             firstName: 'Arriane',
             jobRole: 'Manager',
-            startDate: 'Yesterday',
-            endDate: 'Tomorrow'
+            startDate: '06/07/22 11:00AM',
+            endDate: '-'
         }
     ]
-
 
     const formState = useMemo(() => {
         return initialFormState();
@@ -66,14 +65,16 @@ const EmployeeList = () => {
                                     title: lang.updateEmployeeInfo,
                                     okText: lang.save,
                                     width: "50%"
-                                })}}
-                        >{lang.update}</Button>
+                                })
+                            }}
+                        >{lang.update}
+                    </Button>
                 </div>
             }
             filterButtons={
                 <WarehouseSelection field={fields.warehouse} modifyField={modifyField}/>
             }>
-            <DataTable className="mt-md" columns={columns} data={sampleData} pageSize={10} total={sampleData.length}/>
+            <DataTable columns={columns} data={sampleData} pageSize={10} total={sampleData.length}/>
             <AddEmployeeModal addEmployeeModal={addEmployeeModal}/>
             <EditEmployeeModal editEmployeeModal={editEmployeeModal} />
         </WrapperA>

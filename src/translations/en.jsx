@@ -53,5 +53,15 @@ export const locale = {
     selectJobRole: "Select Job Role",
     updateEmployeeInfo: "Update Employee Information",
     filterByWarehouse: "Filter by warehouse..",
-    warehouseLabel: "Warehouse:"
+    warehouseLabel: "Warehouse:",
+    listOfJobRoles: "List of Job Roles",
+    listOfBrands: "List of Brands",
+    listOfParts: "List of Parts",
+    listOfUnits: "List of Units",
+    listOfSuppliers: "List of Suppliers",
+    listOfWarehouse: "List of Warehouse",
+    addJobRole: "Add New Job Role",
+    updateExistingJobRole: "Update Existing Job Role",
+    addNewPart: "Add New Part",
+    updateExistingPart: "Update Existing Part"
 }; export default Object.freeze(locale);

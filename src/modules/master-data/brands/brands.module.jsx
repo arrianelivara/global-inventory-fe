@@ -1,6 +1,11 @@
-import React from 'react'
+import { WrapperA } from 'components';
+import React from 'react';
+import lang from "translations"
 const Brands = () => {
-    return (<div>Brands</div>  );
+
+    return (<WrapperA title={lang.brands} description={lang.listOfBrands}>
+
+    </WrapperA>);
 }
  
 export default Brands;

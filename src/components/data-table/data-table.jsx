@@ -9,6 +9,7 @@ import {
   Title,
 } from "..";
 import classnames from "classnames";
+import { Empty } from "antd";
 const DataTable = ({
   error,
   onChangePage,
@@ -72,10 +73,7 @@ const DataTable = ({
       return (
         <Container className="bg-white text-center min-h-page flex items-center">
           <div className="m-auto">
-            <Icon name="empty-search-image" fontSize="250px" className="text-gray" />
-            <Text color="text-gray" size="text-md" className="mt-md">
-              {customNoResultError ? customNoResultError : "No result"}
-            </Text>
+            <Empty description={customNoResultErrorDesc} />
             <Text color="text-gray" size="text-sm" className="mt-xs">
               {customNoResultErrorDesc ? customNoResultErrorDesc : "No result"}
             </Text>
@@ -84,22 +82,15 @@ const DataTable = ({
       );
     }
 
-    const { title = "No Data", description = "", custom = null } = renderEmpty;
+    const { description = "No Data Available", custom = null } = renderEmpty;
     return custom ? (
       <div className="bg-white text-center min-h-page flex items-center border rounded">
         <div className="m-auto p-lg">{custom}</div>
       </div>
     ) : (
-      <Container className="bg-white text-center min-h-page flex items-center border rounded">
+      <Container className="my-md bg-white text-center min-h-page flex items-center border rounded">
         <div className="m-auto p-lg">
-          <Text color="text-gray-300" className="mt-md mb-md md:text-md">
-            {title}
-          </Text>
-          {description && (
-            <Text color="text-gray" size="text-sm" className="mt-xs">
-              {description}
-            </Text>
-          )}
+          <Empty description={description} />
         </div>
       </Container>
     );
@@ -129,7 +120,7 @@ const DataTable = ({
             <div>{renderLeftContent}</div>
           </div>
           <div
-            className={classnames("rounded border-b-2 border-blue w-full overflow-hidden overflow-x-auto", {
+            className={classnames("my-md rounded border-b-2 border-blue w-full overflow-hidden overflow-x-auto", {
               "bg-white rounded-md": title,
             })}
           >

@@ -1,6 +1,10 @@
-import React from 'react'
+import { WrapperA } from 'components';
+import React from 'react';
+import lang from "translations";
 const Units = () => {
-    return (<div>Units</div>  );
+    return (<WrapperA title={lang.units} description={lang.listOfUnits}>
+
+    </WrapperA>);
 }
  
 export default Units;

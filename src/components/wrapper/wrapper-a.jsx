@@ -5,10 +5,10 @@ const WrapperA = ({ title, description, actionButtons, filterButtons, children})
     return (
         <React.Fragment>
             <Title lg>{title}</Title>
-            <Text description>{description}</Text>
+            {description && <Text description>{description}</Text>}
             <div className='flex items-center justify-between'>
-                {actionButtons}
-                {filterButtons}
+                {actionButtons && actionButtons}
+                {filterButtons && filterButtons}
             </div>
             {children}
         </React.Fragment>
