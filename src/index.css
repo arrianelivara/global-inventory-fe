@@ -1,9 +1,10 @@
 @import "antd/dist/antd.css";
+@import "./components/icon/icon-font/style.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./components/icon/icon-font/style.css";
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 
 * {
   margin: 0;
@@ -17,7 +18,7 @@
 #root,
 .App {
   height: 100%;
-  background-color: #EDEDF0;
+  background-color: rgb(248 250 252);
 }
 
 .ant-pagination-item a,
@@ -271,11 +272,14 @@
 }
 
 .ant-modal-footer .ant-btn.ant-btn-default {
-  border-color: #161F4A;
   color: #161F4A;
   border-radius: 0.5rem;
   padding: 5px 20px;
   height: 40px;
+}
+
+.ant-modal-footer .ant-btn.ant-btn-default:hover {
+  border-color: #161F4A;
 }
 
 .ant-modal-footer {
@@ -285,4 +289,12 @@
 
 .ant-modal-header .ant-modal-title {
   font-weight: 700;
+}
+
+.ant-pagination-item-active {
+  border-color: #16204a;
+}
+
+.ant-pagination-item-active a {
+  color: #16204a;
 }
